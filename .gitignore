@@ -1,0 +1,13 @@
+# Model weights (too large for GitHub)
+*.pth
+
+# Dataset (too large)
+deepglobe/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
