@@ -163,3 +163,14 @@
 7. 2-phase training (freeze encoder then unfreeze) is the proper approach for pretrained backbones
 8. Early stopping prevents overfitting on small datasets — patience=20 is a good default
 9. Per-epoch time tracking helps plan overnight training runs
+10. Pixel accuracy is misleading for imbalanced datasets — always report IoU
+
+---
+
+## Deployment
+- **Gradio app**: `app.py` — upload satellite image, get segmentation mask
+- **Run locally**: `python app.py` → opens at http://127.0.0.1:7860
+- **Share publicly**: `demo.launch(share=True)` → gives public URL
+- **Model file**: `best_unet_256.pth` (124MB) — needed for deployment
+- **Note**: Only works with actual satellite imagery, not Google Maps screenshots
+9. Per-epoch time tracking helps plan overnight training runs
