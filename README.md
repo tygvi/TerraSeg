@@ -38,7 +38,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-It comes up at http://127.0.0.1:7860. The three images in `test_samples/` show up as examples you can click, or you can upload your own. There's a colour legend under the title showing what each class looks like in the mask.
+Gradio prints a local URL when it starts — usually http://127.0.0.1:7860, though it bumps to another port if that one is busy. Either way, that's where it's running, so open whatever URL it prints. The three images in `test_samples/` show up as examples you can click, or you can upload your own. There's a colour legend under the title showing what each class looks like in the mask.
 
 ### Sharing it with other people
 
