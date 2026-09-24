@@ -50,14 +50,6 @@ python -c "import app; app.demo.launch(share=True)"
 
 It prints a `https://....gradio.live` URL you can send to anyone. Two things to know: the link dies the moment you stop the script or your laptop sleeps, and it's best-effort for up to a week. It's fine for showing someone, not for leaving up.
 
-If you want it online permanently, Gradio can push it to Hugging Face Spaces for free (needs an HF account and `pip install gradio`):
-
-```
-gradio deploy
-```
-
-It asks for a Space name and uploads from the current folder. Remember to put `best_unet_256.pth` in there too, since it's not in this repo — Spaces handles a ~93 MB file fine.
-
 ## Model weights
 
 `best_unet_256.pth` (~93 MB) is not committed here. Drop it in the project root next to `app.py` before running, otherwise the app won't start.
