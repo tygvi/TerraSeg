@@ -43,14 +43,32 @@ def predict(image):
 
     return pred_rgb
 
+# Legend from class colors
+legend = "".join(
+    f'<span style="display:inline-flex;align-items:center;margin:4px 16px 4px 0;">'
+    f'<span style="width:16px;height:16px;background:rgb({r},{g},{b});'
+    f'border:1px solid #999;border-radius:3px;margin-right:6px;"></span>{name}</span>'
+    for name, (r, g, b) in zip(CLASS_NAMES, CLASS_COLORS)
+)
+
+description = (
+    "U-Net with pretrained ResNet34 encoder for satellite imagery segmentation."
+    f'<div style="margin-top:10px;font-size:14px;">'
+    f'<b>Legend — colour to land-cover class:</b><br>{legend}</div>'
+)
+
 # Launch
 demo = gr.Interface(
     fn=predict,
     inputs=gr.Image(label="Satellite Image"),
     outputs=gr.Image(label="Segmentation Mask"),
     title="DeepGlobe Land Cover Segmentation",
-    description="U-Net with pretrained ResNet34 encoder for satellite imagery segmentation. Classes: urban, agriculture, rangeland, forest, water, barren.",
-    examples=None
+    description=description,
+    examples=[
+        ["test_samples/100877_sat.jpg"],
+        ["test_samples/103215_sat.jpg"],
+        ["test_samples/103742_sat.jpg"],
+    ]
 )
 
 if __name__ == "__main__":
